@@ -1,6 +1,6 @@
 {
   "name": "spotify-wrapper",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A wrapper to work with the Spotify Web API",
   "main": "src/modules/spotify/index.js",
   "scripts": {
@@ -8,7 +8,10 @@
     "prepush": "npm run lint && npm run test:coverage",
     "test": "./node_modules/.bin/mocha src/modules/**/*.spec.js --require babel-register",
     "test:watch": "./node_modules/.bin/mocha src/modules/**/*.spec.js --require babel-register --watch",
-    "test:coverage": "nyc npm test"
+    "test:coverage": "nyc npm test",
+    "clear": "rimraf build",
+    "build": "npm run clear && ./node_modules/.bin/babel --out-dir build src",
+    "build:watch": "npm run build -- --watch"
   },
   "nyc": {
     "check-coverage": true,
@@ -27,6 +30,7 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
     "chai": "^4.2.0",
@@ -37,6 +41,7 @@
     "mocha": "^6.0.2",
     "node-fetch": "^2.3.0",
     "nyc": "^14.0.0",
+    "rimraf": "^2.6.3",
     "sinon": "^7.3.2",
     "sinon-chai": "^3.3.0",
     "sinon-stub-promise": "^4.0.0"
