@@ -6,9 +6,9 @@ chai.use(sinonChain);
 
 global.fetch = require('node-fetch');
 
-import { search, searchAlbums, searchArtists, searchTracks, searchPlaylists } from '../../spotify/spotify';
+import { search, searchAlbums, searchArtists, searchTracks, searchPlaylists } from '../search';
 
-describe('Spotify Wrapper', () => {
+describe('Search', () => {
   // Transferido para fora do escopo de Generic search, já que todos os testes vão utilizar
   // Antes de cada teste é criado um stub
   let fetchedStub;
