@@ -14,9 +14,6 @@
     "build:watch": "npm run build -- --watch"
   },
   "nyc": {
-    "check-coverage": true,
-    "functions": 10,
-    "lines": 10,
     "reporter": [
       "text",
       "html"
