@@ -15,7 +15,7 @@
   },
   "nyc": {
     "check-coverage": true,
-    "functions": 80,
+    "functions": 10,
     "lines": 80,
     "reporter": [
       "text",

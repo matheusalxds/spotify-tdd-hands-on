@@ -2,6 +2,8 @@ import { expect } from 'chai';
 
 import SpotifyWrapper from '../index';
 
+import { exists } from '../../../util/expects';
+
 describe('Index Library', () => {
   it('should create an instance of Spotify Wrapper', () => {
     const spotify = new SpotifyWrapper({});
@@ -26,5 +28,12 @@ describe('Index Library', () => {
     });
 
     expect(spotify.token).to.be.equal('foo');
+  });
+
+  describe('request method', () => {
+    it('should have request method', () => {
+      const spotify = new SpotifyWrapper({});
+      exists(spotify.request)
+    })
   })
 });
