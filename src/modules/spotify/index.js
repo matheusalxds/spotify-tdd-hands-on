@@ -2,7 +2,16 @@ import { search, searchPlaylists, searchTracks, searchAlbums, searchArtists } fr
 
 import { getAlbums, getAlbumTracks, getAlbum } from './albums';
 
-module.exports = {
-  search, searchPlaylists, searchTracks, searchAlbums, searchArtists,
-  getAlbums, getAlbumTracks, getAlbum,
-};
+// module.exports = {
+//   search, searchPlaylists, searchTracks, searchAlbums, searchArtists,
+//   getAlbums, getAlbumTracks, getAlbum,
+// };
+
+import { API_URL } from '../../config/consts';
+
+export default class SpotifyWrapper {
+  constructor(options) {
+    this.apiURL = options.apiURL || API_URL;
+    this.token = options.token;
+  }
+}
